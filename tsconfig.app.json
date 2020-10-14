@@ -3,8 +3,12 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": ["node"]
   },
+  "typeRoots":[
+    "../../node_modules",
+    "../../node_modules/@types",
+    "../definitions",
+  ],
   "files": [
     "src/main.ts",
     "src/polyfills.ts"

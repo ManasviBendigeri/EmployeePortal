@@ -3,13 +3,66 @@
     <a routerLink="/employeeadd">Add Employee</a>
   </div>
   <h2 style="text-align:center;font-family: Arial;font-size: 30px;">The Team</h2>
-    <div *ngFor="let employee of employeeArray;">
-  <div class="card">
+  <div *ngFor="let employee of employeeArray;">
+    <div class="card">
+      <a class="pencil"> <i (click)="editEmp($event,employee)" class="fas fa-user-edit fa-lg"
+          style="color: black; float: right;"></i>
+         <i *ngIf="editState && empEdit.id == employee.id" (click)="clearState()" class="fas fa-compress fa-lg" style="color: black; float: right;"></i>
+      </a><br>
       <img src="{{ employee.url }}" id="image">
       <h1 id="name">{{ employee.name }}</h1>
       <h2 style="color: gray;">{{employee.title }}</h2>
       <div style="margin: 24px 0;">
       </div>
+
+      <div *ngIf="editState && empEdit.id == employee.id">
+        <form (ngSubmit)="editEmp(employee)">
+          <table>
+            <tr>
+              <td>
+                <label>Profile Photo</label></td>
+              <td><input type="url" placeholder="Enter Url" formControlName="url" id="url" [(ngModel)]="employee.url" />
+              </td>
+              <br />
+            </tr>
+            <tr>
+              <td>
+                <label>Name</label><br /></td>
+              <td><input type="text" placeholder="Enter Name" formControlName="name" id="name" /></td>
+              <br />
+            </tr>
+            <tr>
+              <td>
+                <label>Date of Birth</label><br />
+              </td>
+              <td>
+                <input type="date" placeholder="Enter DOB" formControlName="dob" id="dob" />
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Job Tile</label><br /></td>
+              <td><input type="text" placeholder="Enter job title" formControlName="title" id="title" /></td>
+              <br />
+            </tr>
+            <tr>
+              <td>
+                <label>Date of Joining</label><br /></td>
+              <td><input type="date" placeholder="Enter DOJ" formControlName="doj" id="doj" /></td>
+              <br />
+            </tr>
+            <tr>
+              <td>
+                <label>Place</label><br /></td>
+              <td><input type="text" placeholder="Enter Place" formControlName="place" id="place" /></td>
+            </tr>
+          </table><br />
+          <button type="submit" value="Update Employee" class="btn btn-outline-dark">Update</button>
+        </form>
+
+
+      </div>
+    </div>
   </div>
-  </div>
-  </body>
+</body>

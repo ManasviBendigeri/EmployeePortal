@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "collab2"
+    }
+  },
+  "defaultProject": "collab2",
+  "cli": {
+    "analytics": false
+  }
 }

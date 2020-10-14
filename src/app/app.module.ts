@@ -27,6 +27,7 @@ import { SalarySlipComponent } from './salary-slip/salary-slip.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
+import { IndexComponent } from './index/index.component';
 
 
 
@@ -43,7 +44,8 @@ import { environment } from 'src/environments/environment';
     AdminComponent,
     EmployeeAddComponent,
     EmployeeListComponent,
-    SalarySlipComponent
+    SalarySlipComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,

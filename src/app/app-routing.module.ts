@@ -1,3 +1,4 @@
+import { IndexComponent } from './index/index.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,7 +15,6 @@ import { RemComponent} from './rem/rem.component';
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { SalarySlipComponent } from './salary-slip/salary-slip.component';
-
  
 
 import { FormControlDirective } from '@angular/forms';
@@ -33,7 +33,8 @@ const routes: Routes=[
   {path: 'employeeadd', component: EmployeeAddComponent},
   {path: 'employeelist', component: EmployeeListComponent},
   {path: 'salaryslip', component: SalarySlipComponent},
-  
+  {path: '', component: IndexComponent},
+  {path: '', redirectTo: '/', pathMatch:'full'},
 
 ]
 
